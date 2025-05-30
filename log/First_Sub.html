@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的技术与生活——log | 标题</title>
+  <title>我的技术与生活——小站首页 | 标题</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="/imgs/shortcut-icon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/public.css" />
@@ -16,7 +16,7 @@
 
   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
   <script>
-    document.title = `我的技术与生活——log`
+    document.title = `我的技术与生活——小站首页`
   </script>
 <meta name="generator" content="Hexo 7.3.0"></head>
 
@@ -347,20 +347,23 @@
       <div id="main-container" class="main-container">
 
 
-  <link rel="stylesheet" href="/css/partial/log.css" />
+  <link rel="stylesheet" href="/css/partial/article.css" />
 
-
-
-<div class="log">
-  
-    <div class="log-item">
-      <h2 class="log-title">
-        <span>2025-05-31 01:10:57</span>
-        <span>星期六</span>
-      </h2>
-      <h1 class="log-main-title"><a href="/./log/First_Sub.html"></a></h1>
-      <div class="log-wrapper more" style="max-height: 1000px;">
-        <article class="article-content"><h1 id="欢迎语"><a href="#欢迎语" class="headerlink" title="欢迎语"></a>欢迎语</h1><ol>
+<div class="article-container">
+  <div class="article">
+    <h1 class="article-title"></h1>
+    <div class="article-info">
+      <div class="article-info--item">
+        <div class="article-info--info">
+          
+          
+          <p class="article-info--date">日期：2025-05-31 01:10:57</p>
+        </div>
+        <img src="/imgs/default-cover.webp" alt="" class="article-cover">
+      </div>
+    </div>
+    <article class="article-content markdown-body">
+      <h1 id="欢迎语"><a href="#欢迎语" class="headerlink" title="欢迎语"></a>欢迎语</h1><ol>
 <li><p><strong>“欢迎来到我的技术博客！这里是我分享编程技巧、开发经验和一些有趣思考的地方，希望能对你有所帮助！”</strong></p>
 </li>
 <li><p><strong>“你好！感谢访问我的技术博客，和我一起探索编程的世界，分享实用的技术和工具，走在科技的前沿。”</strong></p>
@@ -386,16 +389,72 @@
 <li><strong>右侧音乐列表</strong>: 不必修改</li>
 <li><strong>个人介绍</strong>: 鱼弟, 24岁, 男, 地球村, 花海中, coder, 打游戏 打游戏打游戏</li>
 </ul>
-</article>
-        
-          <a href="/./log/First_Sub.html" class="more-title">阅读更多</a> 
-        
-      </div>
+
+    </article>
+    
+    <div class="read-nums">
+      <!-- id 将作为查询条件 -->
+      <span id="log/First_Sub.html" class="leancloud_visitors" data-flag-title="Your Article Title">
+        <em class="post-meta-item-text">浏览量</em>
+        <i class="leancloud-visitors-count"></i>
+      </span>
     </div>
-  
-  
+    <div class="comments-intro">
+      <h2>评论区</h2>
+      <p>欢迎你留下宝贵的意见，昵称输入QQ号会显示QQ头像哦~</p>
+    </div>
+    <div id="vcomments" class="vcomments"></div>
+    
+  </div>
+  <div class="article-catelogue">
+    <div class="article-catelogue--wrapper">
+      <div class="catelogue catelogue-1">
+        <h3>目录</h3>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AC%A2%E8%BF%8E%E8%AF%AD"><span class="toc-number">1.</span> <span class="toc-text">欢迎语</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%AB%99%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.</span> <span class="toc-text">小站信息</span></a></li></ol></li></ol>
+      </div>
+      
+    </div>
+  </div>
 </div>
 
+
+<script>
+  // var定义，避免pjax重新进来造成的重复声明错误
+  var config = JSON.parse('{"enable":true,"appId":"Pf8zCXGEH1qsprnWfikVVujL-gzGzoHsz","appKey":"qOqoiUHhH1TGtLRUYURkLRQX","placeholder":"请留下你宝贵的意见吧~","meta":["nick"],"recordIP":true,"visitor":true,"enableQQ":true}')
+  new Valine({
+    el: '#vcomments',
+    appId: config.appId,
+    appKey: config.appKey,
+    placeholder: config.placeholder,
+    meta: config.meta,
+    recordIP: config.recordIP,
+    visitor: config.visitor,
+    enableQQ: config.enableQQ,
+    path: 'log/First_Sub.html'
+  })
+</script>
+
+
+<script>
+  $(document).on('pjax:complete', function() {
+    const tocs = document.querySelector('.toc')
+    const links = tocs ? tocs.querySelectorAll('a') : []
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        const href = decodeURIComponent(e.href)
+        href.search(/#(.*)/)
+        const id = RegExp.$1
+        const target = document.querySelector('#' + id)
+        const top = target.offsetTop
+        document.documentElement.scrollTo({
+          top: top - 100,
+          behavior: 'smooth'
+        })
+        e.preventDefault()
+      })
+    })
+  })
+</script> 
 
 </div>
       <div class="main-right-wrapper"><div class="main-right">
